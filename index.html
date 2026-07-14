@@ -187,40 +187,30 @@
             color: #667eea;
         }
 
-        /* Diplomas Section */
-        .diplomas {
-            background: rgba(30, 30, 46, 0.3);
-        }
-
-        .diplomas-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
+        .diploma-preview {
             margin-top: 30px;
+            text-align: center;
         }
 
-        .diploma-item {
-            position: relative;
-            overflow: hidden;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-            cursor: pointer;
-            transition: transform 0.3s;
-        }
-
-        .diploma-item:hover {
-            transform: translateY(-5px);
-        }
-
-        .diploma-item img {
+        .diploma-preview img {
+            max-width: 350px;
             width: 100%;
-            height: auto;
-            display: block;
-            transition: transform 0.3s;
+            border-radius: 8px;
+            cursor: pointer;
+            border: 2px solid #4a4a6a;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
         }
 
-        .diploma-item:hover img {
+        .diploma-preview img:hover {
             transform: scale(1.05);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+        }
+
+        .diploma-preview p {
+            font-size: 0.9em;
+            color: #a0a0c0;
+            margin-top: 10px;
         }
 
         /* Modal for images */
@@ -234,15 +224,20 @@
             height: 100%;
             overflow: auto;
             background-color: rgba(0, 0, 0, 0.9);
+            backdrop-filter: blur(5px);
         }
 
         .modal-content {
             margin: auto;
             display: block;
-            max-width: 90%;
-            max-height: 90%;
-            margin-top: 50px;
+            /* Исходный размер превью 350px. Увеличиваем ровно в 2 раза = 700px */
+            width: 700px;
+            max-width: 95vw;
+            max-height: 90vh;
+            margin-top: 5vh;
             border-radius: 10px;
+            box-shadow: 0 0 30px rgba(102, 126, 234, 0.5);
+            object-fit: contain;
         }
 
         .close {
@@ -258,7 +253,7 @@
 
         .close:hover,
         .close:focus {
-            color: #bbb;
+            color: #667eea;
             text-decoration: none;
         }
 
@@ -350,10 +345,10 @@
             padding: 40px;
             max-width: 800px;
             margin: 0 auto;
+            text-align: center;
         }
 
         .price-header {
-            text-align: center;
             margin-bottom: 30px;
             padding-bottom: 20px;
             border-bottom: 2px solid rgba(102, 126, 234, 0.3);
@@ -372,9 +367,8 @@
 
         .price-location {
             background: rgba(102, 126, 234, 0.2);
-            padding: 20px;
+            padding: 25px;
             border-radius: 10px;
-            margin-bottom: 25px;
         }
 
         .price-location h4 {
@@ -384,34 +378,13 @@
         }
 
         .price-location p {
-            color: #c0c0d0;
+            color: #e0e0e0;
+            font-size: 1.1em;
         }
 
         .price-location i {
             color: #667eea;
             margin-right: 10px;
-        }
-
-        .process-list {
-            list-style: none;
-            padding: 0;
-        }
-
-        .process-list li {
-            padding: 15px 0 15px 40px;
-            position: relative;
-            color: #e0e0e0;
-            font-size: 1.1em;
-        }
-
-        .process-list li::before {
-            content: '\f058';
-            font-family: 'Font Awesome 6 Free';
-            font-weight: 900;
-            position: absolute;
-            left: 0;
-            color: #667eea;
-            font-size: 1.3em;
         }
 
         /* Contacts Section */
@@ -553,8 +526,7 @@
                 max-width: 300px;
             }
 
-            .services-grid,
-            .diplomas-grid {
+            .services-grid {
                 grid-template-columns: 1fr;
             }
 
@@ -590,6 +562,11 @@
             .contact-form {
                 padding: 25px;
             }
+            
+            .modal-content {
+                width: 95vw;
+                margin-top: 10vh;
+            }
         }
     </style>
 </head>
@@ -619,33 +596,21 @@
                         <li>Повысила квалификацию в НМИЦ ПН им. В.М. Бехтерева — Медицинский гипноз</li>
                         <li>Гипнотерапевт Национальной гильдии гипнотизёров (National Guild of Hypnotists)</li>
                     </ul>
+                    
+                    <!-- Изображение диплома с увеличением в 2 раза при клике -->
+                    <div class="diploma-preview">
+                        <img src="img_1.jpg" alt="Диплом об образовании" onclick="openModal('img_1.jpg')">
+                        <p><i class="fas fa-search-plus"></i> Нажмите на изображение для увеличения</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Diplomas Section -->
-    <section class="diplomas">
-        <div class="container">
-            <h2>Документы об образовании</h2>
-            <div class="diplomas-grid">
-                <div class="diploma-item" onclick="openModal('img_1.jpg')">
-                    <img src="img_1.jpg" alt="Диплом 1">
-                </div>
-                <div class="diploma-item" onclick="openModal('img_2.jpg')">
-                    <img src="img_2.jpg" alt="Диплом 2">
-                </div>
-                <div class="diploma-item" onclick="openModal('img_3.jpg')">
-                    <img src="img_3.jpg" alt="Диплом 3">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Modal for images -->
+    <!-- Modal for image enlargement -->
     <div id="imageModal" class="modal">
         <span class="close" onclick="closeModal()">&times;</span>
-        <img class="modal-content" id="modalImg">
+        <img class="modal-content" id="modalImg" alt="Увеличенный диплом">
     </div>
 
     <section class="services">
@@ -708,12 +673,12 @@
     <!-- Prices Section -->
     <section class="prices">
         <div class="container">
-            <h2>Стоимость и формат работы</h2>
+            <h2>Формат работы</h2>
             <div class="price-card">
                 <div class="price-header">
                     <h3>Персональная консультация</h3>
                     <p class="price-duration">
-                        <i class="fas fa-clock"></i> Длительность: от 40 минут до 1 часа 30 минут
+                        <i class="fas fa-clock"></i> Длительность: от 50 минут до 1 часа 30 минут
                     </p>
                 </div>
                 
@@ -721,15 +686,6 @@
                     <h4><i class="fas fa-map-marker-alt"></i> Как проходит встреча:</h4>
                     <p>On-line или Лично в г. Москва: башня Федерация (Москва-Сити, м. Деловой центр)</p>
                 </div>
-
-                <h4 style="color: #fff; margin-bottom: 20px; font-size: 1.3em;">Процесс работы:</h4>
-                <ul class="process-list">
-                    <li>Собираем необходимую информацию</li>
-                    <li>Прорабатываем эмоциональное состояние</li>
-                    <li>Трансформируем проблему в запрос</li>
-                    <li>Находим пути решения</li>
-                    <li>Подводим итоги проделанной работы</li>
-                </ul>
             </div>
         </div>
     </section>
@@ -795,7 +751,7 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2026.Анна Курнаева</p>
+            <p>&copy; 2026  Анна Курнаева</p>
         </div>
     </footer>
 
