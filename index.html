@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Курнаева Анна - психолог, гипнотерапевт. Профессиональная помощь в решении психологических проблем.">
+    <title>Курнаева Анна | Психолог, Гипнотерапевт</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1e1e2e 0%, #2d2d44 100%);
+            color: #e0e0e0;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: rgba(30, 30, 46, 0.95);
+            padding: 40px 0;
+            text-align: center;
+            border-bottom: 2px solid #4a4a6a;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        header h1 {
+            color: #fff;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+
+        header .subtitle {
+            color: #a0a0c0;
+            font-size: 1.3em;
+            font-weight: 300;
+        }
+
+        /* Sections */
+        section {
+            padding: 60px 0;
+        }
+
+        h2 {
+            color: #fff;
+            font-size: 2em;
+            margin-bottom: 30px;
+            text-align: center;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+        }
+
+        /* About Section */
+        .about {
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        .about-content {
+            display: flex;
+            align-items: flex-start;
+            gap: 50px;
+            flex-wrap: wrap;
+        }
+
+        .photo-container {
+            flex: 0 0 350px;
+            text-align: center;
+        }
+
+        .photo-container img {
+            width: 100%;
+            max-width: 350px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            border: 3px solid #4a4a6a;
+        }
+
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .about-text p {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+            color: #fff;
+            font-weight: 500;
+        }
+
+        .about-text ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .about-text li {
+            padding: 10px 0 10px 30px;
+            position: relative;
+            color: #c0c0d0;
+        }
+
+        .about-text li::before {
+            content: '\f00c';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: #667eea;
+        }
+
+        /* Services Section */
+        .services {
+            background: rgba(30, 30, 46, 0.5);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .service-item {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 25px;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .service-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.3);
+        }
+
+        .service-item i {
+            color: #667eea;
+            margin-right: 10px;
+            font-size: 1.2em;
+        }
+
+        /* Warning Section */
+        .warning {
+            background: rgba(139, 0, 0, 0.1);
+            border: 2px solid #8b0000;
+            border-radius: 10px;
+            padding: 30px;
+            margin: 40px 0;
+        }
+
+        .warning h3 {
+            color: #ff6b6b;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+        }
+
+        .warning ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .warning li {
+            padding: 8px 0 8px 25px;
+            position: relative;
+            color: #ffb3b3;
+        }
+
+        .warning li::before {
+            content: '\f00d';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: #ff6b6b;
+        }
+
+        .warning-note {
+            margin-top: 20px;
+            padding: 15px;
+            background: rgba(139, 0, 0, 0.2);
+            border-radius: 5px;
+            text-align: center;
+            font-weight: bold;
+            color: #ff8585;
+        }
+
+        /* Contacts Section */
+        .contacts {
+            background: rgba(255, 255, 255, 0.03);
+            text-align: center;
+        }
+
+        .contacts-grid {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 20px 30px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            transition: all 0.3s;
+            text-decoration: none;
+            color: #e0e0e0;
+        }
+
+        .contact-item:hover {
+            background: rgba(102, 126, 234, 0.2);
+            transform: translateY(-3px);
+            color: #fff;
+        }
+
+        .contact-item i {
+            font-size: 2em;
+            color: #667eea;
+            width: 40px;
+            text-align: center;
+        }
+
+        .contact-item span {
+            font-size: 1.1em;
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(0, 0, 0, 0.3);
+            text-align: center;
+            padding: 30px 0;
+            color: #808090;
+            font-size: 0.9em;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8em;
+            }
+
+            header .subtitle {
+                font-size: 1.1em;
+            }
+
+            .about-content {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .photo-container {
+                flex: none;
+                width: 100%;
+                max-width: 300px;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contacts-grid {
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+            }
+
+            section {
+                padding: 40px 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.5em;
+            }
+
+            h2 {
+                font-size: 1.5em;
+            }
+
+            .contact-item {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Курнаева Анна</h1>
+            <p class="subtitle">Психолог, Гипнотерапевт</p>
+        </div>
+    </header>
+
+    <section class="about">
+        <div class="container">
+            <h2>О себе</h2>
+            <div class="about-content">
+                <div class="photo-container">
+                    <img src="foto.jpg" alt="Курнаева Анна - психолог">
+                </div>
+                <div class="about-text">
+                    <p>Я практик. Мне важны ваши результаты.</p>
+                    <ul>
+                        <li>Окончила Институт психотерапии и медицинской психологии им. Б.Д. Карвасарского</li>
+                        <li>Повысила квалификацию в НМИЦ ПН им. В.М. Бехтерева — Медицинский гипноз</li>
+                        <li>Гипнотерапевт Национальной гильдии гипнотизёров (National Guild of Hypnotists)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="services">
+        <div class="container">
+            <h2>С чем работаю</h2>
+            <div class="services-grid">
+                <div class="service-item">
+                    <i class="fas fa-brain"></i>
+                    <span>Самооценка и идентичность, отношения (стыд, непринятие своего тела, комплексы)</span>
+                </div>
+                <div class="service-item">
+                    <i class="fas fa-road"></i>
+                    <span>Жизненные переходы (переезд, выход из декрета, смена профессии)</span>
+                </div>
+                <div class="service-item">
+                    <i class="fas fa-balance-scale"></i>
+                    <span>Баланс сфер жизни</span>
+                </div>
+                <div class="service-item">
+                    <i class="fas fa-battery-quarter"></i>
+                    <span>Выгорание, потеря смыслов, апатия</span>
+                </div>
+                <div class="service-item">
+                    <i class="fas fa-heartbeat"></i>
+                    <span>Панические атаки, тревога</span>
+                </div>
+                <div class="service-item">
+                    <i class="fas fa-smoking-ban"></i>
+                    <span>Зависимости (эмоциональное переедание, курение)</span>
+                </div>
+                <div class="service-item">
+                    <i class="fas fa-user-md"></i>
+                    <span>Психосоматика (ком в горле, кожные высыпания, мигрени)</span>
+                </div>
+                <div class="service-item">
+                    <i class="fas fa-moon"></i>
+                    <span>Проблемы со сном и бессонница</span>
+                </div>
+                <div class="service-item">
+                    <i class="fas fa-hands-helping"></i>
+                    <span>Поддерживающая терапия (сопровождение)</span>
+                </div>
+            </div>
+
+            <div class="warning">
+                <h3><i class="fas fa-exclamation-triangle"></i> Особые условия приёма</h3>
+                <p style="margin-bottom: 15px; color: #fff;">Вы НЕ являетесь лицом:</p>
+                <ul>
+                    <li>Страдающими алкоголизмом и наркоманией</li>
+                    <li>Имеющим диагноз шизофрении, бредового расстройства, шизотипического расстройства, галлюцинаций, паранойи</li>
+                    <li>С длительным опытом употребления наркотических веществ</li>
+                </ul>
+                <div class="warning-note">
+                    <i class="fas fa-info-circle"></i> ЗАПИСЫВАЯСЬ НА ПРИЁМ, ВЫ ПОДТВЕРЖДАЕТЕ, ЧТО ОЗНАКОМЛЕНЫ С ПЕРЕЧНЕМ ПРОБЛЕМ, С КОТОРЫМИ Я НЕ РАБОТАЮ
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contacts">
+        <div class="container">
+            <h2>Контакты</h2>
+            <div class="contacts-grid">
+                <a href="tel:+79968625267" class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>+7 (996) 862-52-67</span>
+                </a>
+                <a href="https://t.me/anna_gipnoz" target="_blank" class="contact-item">
+                    <i class="fab fa-telegram"></i>
+                    <span>@anna_gipnoz</span>
+                </a>
+                <a href="mailto:anna_gipnoz@yandex.ru" class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>anna_gipnoz@yandex.ru</span>
+                </a>
+                <a href="https://instagram.com/anna_gipnoz" target="_blank" class="contact-item">
+                    <i class="fab fa-instagram"></i>
+                    <span>@anna_gipnoz</span>
+                </a>
+            </div>
+            <p style="margin-top: 30px; color: #a0a0c0;">
+                <i class="fas fa-mobile-alt"></i> Также доступен в WhatsApp и Max
+            </p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Курнаева Анна. Все права защищены.</p>
+            <p style="margin-top: 10px;">Психолог, гипнотерапевт</p>
+        </div>
+    </footer>
+</body>
+</html>
