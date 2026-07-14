@@ -6,6 +6,49 @@
     <meta name="description" content="Курнаева Анна - психолог, гипнотерапевт. Профессиональная помощь в решении психологических проблем.">
     <title>Курнаева Анна | Психолог, Гипнотерапевт</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Schema.org markup -->
+    <meta itemprop="name" content="Курнаева Анна - Психолог, Гипнотерапевт">
+    <meta itemprop="description" content="Профессиональная психологическая помощь и гипнотерапия. Решение проблем с самооценкой, тревожностью, зависимостями.">
+    <meta itemprop="image" content="foto.jpg">
+    
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": ["Person", "MedicalBusiness"],
+        "name": "Курнаева Анна",
+        "jobTitle": "Психолог, Гипнотерапевт",
+        "description": "Профессиональная психологическая помощь и гипнотерапия",
+        "url": "https://kurnaeva-anna.ru",
+        "email": "anna_gipnoz@yandex.ru",
+        "telephone": "+7-996-862-52-67",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Москва",
+            "streetAddress": "башня Федерация, Москва-Сити, м. Деловой центр"
+        },
+        "alumniOf": [
+            "Институт психотерапии и медицинской психологии им. Б.Д. Карвасарского",
+            "НМИЦ ПН им. В.М. Бехтерева",
+            "National Guild of Hypnotists"
+        ],
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Психологические услуги",
+            "itemListElement": [
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Персональная консультация"
+                    }
+                }
+            ]
+        }
+    }
+    </script>
+    
     <style>
         * {
             margin: 0;
@@ -106,6 +149,17 @@
             min-width: 300px;
         }
 
+        .about-text .intro-text {
+            font-size: 1.1em;
+            margin-bottom: 25px;
+            color: #c0c0d0;
+            font-style: italic;
+            padding: 20px;
+            background: rgba(102, 126, 234, 0.1);
+            border-left: 4px solid #667eea;
+            border-radius: 5px;
+        }
+
         .about-text p {
             font-size: 1.2em;
             margin-bottom: 20px;
@@ -131,6 +185,81 @@
             position: absolute;
             left: 0;
             color: #667eea;
+        }
+
+        /* Diplomas Section */
+        .diplomas {
+            background: rgba(30, 30, 46, 0.3);
+        }
+
+        .diplomas-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .diploma-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .diploma-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .diploma-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.3s;
+        }
+
+        .diploma-item:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Modal for images */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+
+        .modal-content {
+            margin: auto;
+            display: block;
+            max-width: 90%;
+            max-height: 90%;
+            margin-top: 50px;
+            border-radius: 10px;
+        }
+
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #bbb;
+            text-decoration: none;
         }
 
         /* Services Section */
@@ -209,9 +338,85 @@
             color: #ff8585;
         }
 
+        /* Prices Section */
+        .prices {
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        .price-card {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.2) 0%, rgba(118, 75, 162, 0.2) 100%);
+            border: 2px solid #667eea;
+            border-radius: 15px;
+            padding: 40px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .price-header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid rgba(102, 126, 234, 0.3);
+        }
+
+        .price-header h3 {
+            color: #fff;
+            font-size: 1.8em;
+            margin-bottom: 10px;
+        }
+
+        .price-duration {
+            color: #a0a0c0;
+            font-size: 1.2em;
+        }
+
+        .price-location {
+            background: rgba(102, 126, 234, 0.2);
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 25px;
+        }
+
+        .price-location h4 {
+            color: #fff;
+            margin-bottom: 10px;
+            font-size: 1.3em;
+        }
+
+        .price-location p {
+            color: #c0c0d0;
+        }
+
+        .price-location i {
+            color: #667eea;
+            margin-right: 10px;
+        }
+
+        .process-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .process-list li {
+            padding: 15px 0 15px 40px;
+            position: relative;
+            color: #e0e0e0;
+            font-size: 1.1em;
+        }
+
+        .process-list li::before {
+            content: '\f058';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-size: 1.3em;
+        }
+
         /* Contacts Section */
         .contacts {
-            background: rgba(255, 255, 255, 0.03);
+            background: rgba(30, 30, 46, 0.5);
             text-align: center;
         }
 
@@ -252,6 +457,72 @@
             font-size: 1.1em;
         }
 
+        /* Contact Form Section */
+        .contact-form-section {
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 40px;
+            border-radius: 15px;
+            border: 1px solid rgba(102, 126, 234, 0.3);
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #fff;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid #4a4a6a;
+            border-radius: 8px;
+            color: #fff;
+            font-size: 1em;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border: none;
+            border-radius: 8px;
+            color: #fff;
+            font-size: 1.1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+        }
+
         /* Footer */
         footer {
             background: rgba(0, 0, 0, 0.3);
@@ -282,7 +553,8 @@
                 max-width: 300px;
             }
 
-            .services-grid {
+            .services-grid,
+            .diplomas-grid {
                 grid-template-columns: 1fr;
             }
 
@@ -290,6 +562,10 @@
                 flex-direction: column;
                 align-items: center;
                 gap: 20px;
+            }
+
+            .price-card {
+                padding: 25px;
             }
 
             section {
@@ -310,6 +586,10 @@
                 width: 100%;
                 justify-content: center;
             }
+
+            .contact-form {
+                padding: 25px;
+            }
         }
     </style>
 </head>
@@ -329,6 +609,10 @@
                     <img src="foto.jpg" alt="Курнаева Анна - психолог">
                 </div>
                 <div class="about-text">
+                    <div class="intro-text">
+                        Для себя я приняла одну важную вещь: психика человека может излечиться только о психику другого человека, впрочем, как и ранится. Именно поэтому на всем жизненном пути человеку нужен человек.<br><br>
+                        Психотерапия — это про искусство быть рядом с человеком, даже, кода он против себя.
+                    </div>
                     <p>Я практик. Мне важны ваши результаты.</p>
                     <ul>
                         <li>Окончила Институт психотерапии и медицинской психологии им. Б.Д. Карвасарского</li>
@@ -339,6 +623,30 @@
             </div>
         </div>
     </section>
+
+    <!-- Diplomas Section -->
+    <section class="diplomas">
+        <div class="container">
+            <h2>Документы об образовании</h2>
+            <div class="diplomas-grid">
+                <div class="diploma-item" onclick="openModal('img_1.jpg')">
+                    <img src="img_1.jpg" alt="Диплом 1">
+                </div>
+                <div class="diploma-item" onclick="openModal('img_2.jpg')">
+                    <img src="img_2.jpg" alt="Диплом 2">
+                </div>
+                <div class="diploma-item" onclick="openModal('img_3.jpg')">
+                    <img src="img_3.jpg" alt="Диплом 3">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal for images -->
+    <div id="imageModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modalImg">
+    </div>
 
     <section class="services">
         <div class="container">
@@ -397,6 +705,35 @@
         </div>
     </section>
 
+    <!-- Prices Section -->
+    <section class="prices">
+        <div class="container">
+            <h2>Стоимость и формат работы</h2>
+            <div class="price-card">
+                <div class="price-header">
+                    <h3>Персональная консультация</h3>
+                    <p class="price-duration">
+                        <i class="fas fa-clock"></i> Длительность: от 40 минут до 1 часа 30 минут
+                    </p>
+                </div>
+                
+                <div class="price-location">
+                    <h4><i class="fas fa-map-marker-alt"></i> Как проходит встреча:</h4>
+                    <p>On-line или Лично в г. Москва: башня Федерация (Москва-Сити, м. Деловой центр)</p>
+                </div>
+
+                <h4 style="color: #fff; margin-bottom: 20px; font-size: 1.3em;">Процесс работы:</h4>
+                <ul class="process-list">
+                    <li>Собираем необходимую информацию</li>
+                    <li>Прорабатываем эмоциональное состояние</li>
+                    <li>Трансформируем проблему в запрос</li>
+                    <li>Находим пути решения</li>
+                    <li>Подводим итоги проделанной работы</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
     <section class="contacts">
         <div class="container">
             <h2>Контакты</h2>
@@ -413,10 +750,6 @@
                     <i class="fas fa-envelope"></i>
                     <span>anna_gipnoz@yandex.ru</span>
                 </a>
-                <a href="https://instagram.com/anna_gipnoz" target="_blank" class="contact-item">
-                    <i class="fab fa-instagram"></i>
-                    <span>@anna_gipnoz</span>
-                </a>
             </div>
             <p style="margin-top: 30px; color: #a0a0c0;">
                 <i class="fas fa-mobile-alt"></i> Также доступен в WhatsApp и Max
@@ -424,11 +757,75 @@
         </div>
     </section>
 
+    <!-- Contact Form Section -->
+    <section class="contact-form-section">
+        <div class="container">
+            <h2>Написать сообщение</h2>
+            <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                <div class="form-group">
+                    <label for="name"><i class="fas fa-user"></i> Ваше имя</label>
+                    <input type="text" id="name" name="name" required placeholder="Введите ваше имя">
+                </div>
+                
+                <div class="form-group">
+                    <label for="email"><i class="fas fa-envelope"></i> Email</label>
+                    <input type="email" id="email" name="email" required placeholder="your@email.com">
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone"><i class="fas fa-phone"></i> Телефон</label>
+                    <input type="tel" id="phone" name="phone" placeholder="+7 (___) ___-__-__">
+                </div>
+                
+                <div class="form-group">
+                    <label for="message"><i class="fas fa-comment"></i> Сообщение</label>
+                    <textarea id="message" name="message" required placeholder="Расскажите о вашей ситуации..."></textarea>
+                </div>
+                
+                <button type="submit" class="submit-btn">
+                    <i class="fas fa-paper-plane"></i> Отправить сообщение
+                </button>
+                
+                <p style="margin-top: 20px; font-size: 0.9em; color: #808090; text-align: center;">
+                    <i class="fas fa-lock"></i> Ваши данные защищены и не будут переданы третьим лицам
+                </p>
+            </form>
+        </div>
+    </section>
+
     <footer>
         <div class="container">
-            <p>&copy; 2026 Курнаева Анна. Все права защищены.</p>
-            <p style="margin-top: 10px;">Психолог, гипнотерапевт</p>
+            <p>&copy; 2026.Анна Курнаева</p>
         </div>
     </footer>
+
+    <script>
+        // Modal functionality
+        function openModal(imgSrc) {
+            var modal = document.getElementById("imageModal");
+            var modalImg = document.getElementById("modalImg");
+            modal.style.display = "block";
+            modalImg.src = imgSrc;
+        }
+
+        function closeModal() {
+            var modal = document.getElementById("imageModal");
+            modal.style.display = "none";
+        }
+
+        // Close modal when clicking outside the image
+        window.onclick = function(event) {
+            var modal = document.getElementById("imageModal");
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+        // Phone mask
+        document.getElementById('phone').addEventListener('input', function(e) {
+            var x = e.target.value.replace(/\D/g, '').match(/(\d{0,1})(\d{0,3})(\d{0,3})(\d{0,2})(\d{0,2})/);
+            e.target.value = !x[2] ? x[1] : '+' + x[1] + ' (' + x[2] + ') ' + x[3] + (x[4] ? '-' + x[4] : '') + (x[5] ? '-' + x[5] : '');
+        });
+    </script>
 </body>
 </html>
