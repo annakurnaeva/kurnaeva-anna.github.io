@@ -3,16 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Анна Курнаева - клинический психолог, гипнотерапевт. Нешаблонная терапия. Ваша личная глубина.">
+    <meta name="description" content="Анна Курнаева - клинический психолог, гипнотерапевт. Нешаблонная терапия.">
     <title>Анна Курнаева | Клинический психолог, Гипнотерапевт</title>
     
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="logo.svg">
-    <link rel="apple-touch-icon" href="logo.svg">
+    <!-- Favicon (RealFaviconGenerator) -->
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="AnnaKurnaeva" />
+    <link rel="manifest" href="/site.webmanifest" />
     
     <!-- Open Graph -->
     <meta property="og:title" content="Анна Курнаева — Клинический психолог, Гипнотерапевт">
-    <meta property="og:description" content="Нешаблонная терапия. Ваша личная глубина. Профессиональная психологическая помощь.">
+    <meta property="og:description" content="Нешаблонная терапия. Профессиональная психологическая помощь.">
     <meta property="og:image" content="https://annakurnaeva.pro/foto.jpg">
     <meta property="og:url" content="https://annakurnaeva.pro">
     <meta property="og:type" content="website">
@@ -42,7 +46,7 @@
         "@type": ["Person", "MedicalBusiness"],
         "name": "Анна Курнаева",
         "jobTitle": "Клинический психолог, Гипнотерапевт",
-        "description": "Нешаблонная терапия. Ваша личная глубина.",
+        "description": "Нешаблонная терапия",
         "url": "https://annakurnaeva.pro",
         "email": "ankurnaeva@ya.ru",
         "telephone": "+7-996-862-52-67",
@@ -613,7 +617,7 @@
             z-index: 9999;
             border-top: 2px solid var(--accent-gold);
             box-shadow: 0 -5px 20px rgba(0,0,0,0.5);
-            display: none; /* Скрыт по умолчанию, показывается через JS */
+            display: none;
         }
 
         #cookie-banner p {
@@ -776,7 +780,6 @@
                 <h2 id="about-heading">О себе</h2>
                 <div class="about-content">
                     <div class="photo-container">
-                        <!-- Eager loading для главного изображения (LCP оптимизация) -->
                         <img src="foto.jpg" alt="Анна Курнаева, клинический психолог и гипнотерапевт" loading="eager">
                     </div>
                     <div class="about-text">
@@ -795,7 +798,6 @@
                         </ul>
                         
                         <div class="diploma-preview">
-                            <!-- Lazy loading для второстепенных изображений -->
                             <img src="img_1.jpg" alt="Диплом об образовании" loading="lazy" onclick="toggleZoom(this)" tabindex="0" role="button" aria-label="Увеличить изображение диплома">
                             <p><i class="fas fa-search-plus" aria-hidden="true"></i> Нажмите для увеличения</p>
                         </div>
@@ -905,7 +907,6 @@
                         <i class="fas fa-address-card" aria-hidden="true"></i> Сохранить контакт (vCard)
                     </button>
                     <div class="qr-container">
-                        <!-- Lazy loading для QR-кода -->
                         <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&margin=10&data=BEGIN%3AVCARD%0AVERSION%3A3.0%0AFN%3A%D0%90%D0%BD%D0%BD%D0%B0%20%D0%9A%D1%83%D1%80%D0%BD%D0%B0%D0%B5%D0%B2%D0%B0%0ATITLE%3A%D0%9A%D0%BB%D0%B8%D0%BD%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B9%20%D0%BF%D1%81%D0%B8%D1%85%D0%BE%D0%BB%D0%BE%D0%B3%2C%20%D0%93%D0%B8%D0%BF%D0%BD%D0%BE%D1%82%D0%B5%D1%80%D0%B0%D0%BF%D0%B5%D0%B2%D1%82%0ATEL%3BTYPE%3DCELL%3A%2B79968625267%0AEMAIL%3Aankurnaeva%40ya.ru%0AURL%3Ahttps%3A%2F%2Ft.me%2FKurnaevaAnna%0AURL%3Ahttps%3A%2F%2Fmax.ru%2Fu%2Ff9LHodD0cOJRGfv7mVPfw0TJrqGUnwsZacQV5K-G5eckzzvfHAjc7h3cEO0%0ANOTE%3A%D0%9D%D0%B5%D1%88%D0%B0%D0%B1%D0%BB%D0%BE%D0%BD%D0%BD%D0%B0%D1%8F%20%D1%82%D0%B5%D1%80%D0%B0%D0%BF%D0%B8%D1%8F.%20%D0%92%D0%B0%D1%88%D0%B0%20%D0%BB%D0%B8%D1%87%D0%BD%D0%B0%D1%8F%20%D0%B3%D0%BB%D1%83%D0%B1%D0%B8%D0%BD%D0%B0.%0AEND%3AVCARD" alt="QR-код для добавления контакта в телефон" loading="lazy">
                         <p>Отсканируйте камерой телефона, для получения контактов</p>
                     </div>
@@ -928,7 +929,7 @@
     </div>
 
     <!-- Back to Top Button -->
-    <button id="toTop" aria-label="Вернуться наверх">
+    <button id="toTop" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" aria-label="Вернуться наверх">
         <i class="fas fa-chevron-up"></i>
     </button>
 
@@ -994,7 +995,7 @@ TEL;TYPE=CELL:+79968625267
 EMAIL:ankurnaeva@ya.ru
 URL:https://t.me/KurnaevaAnna
 URL:https://max.ru/u/f9LHodD0cOJRGfv7mVPfw0TJrqGUnwsZacQV5K-G5eckzzvfHAjc7h3cEO0
-NOTE:Нешаблонная терапия. Ваша личная глубина.
+NOTE:Нешаблонная терапия.
 END:VCARD`;
             
             const blob = new Blob([vCardData], { type: 'text/vcard;charset=utf-8' });
