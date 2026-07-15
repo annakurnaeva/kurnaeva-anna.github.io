@@ -7,6 +7,11 @@
     <title>Анна Курнаева | Клинический психолог, Гипнотерапевт</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
+    <!-- Подключение премиальных шрифтов -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
     <!-- Schema.org markup -->
     <meta itemprop="name" content="Анна Курнаева - Клинический психолог, Гипнотерапевт">
     <meta itemprop="description" content="Нешаблонная терапия. Ваша личная глубина. Профессиональная психологическая помощь и гипнотерапия.">
@@ -73,7 +78,7 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Manrope', sans-serif;
             background-color: var(--bg-deep);
             color: var(--text-main);
             line-height: 1.7;
@@ -117,9 +122,10 @@
         }
 
         header h1 {
+            font-family: 'Cormorant Garamond', serif;
             color: var(--accent-gold);
             font-size: 2.5em;
-            font-weight: 300;
+            font-weight: 400;
             letter-spacing: 2px;
             text-transform: uppercase;
             white-space: nowrap;
@@ -133,9 +139,10 @@
         }
 
         header .subtitle {
+            font-family: 'Cormorant Garamond', serif;
             color: var(--text-main);
-            font-size: 1.3em;
-            font-weight: 300;
+            font-size: 1.4em;
+            font-weight: 400;
             font-style: italic;
             opacity: 0.9;
             white-space: nowrap;
@@ -182,13 +189,14 @@
         }
 
         h2 {
+            font-family: 'Cormorant Garamond', serif;
             color: var(--accent-gold);
-            font-size: 2em;
+            font-size: 2.2em;
             margin-bottom: 40px;
             text-align: center;
             position: relative;
             padding-bottom: 15px;
-            font-weight: 400;
+            font-weight: 600;
             letter-spacing: 1px;
         }
 
@@ -205,110 +213,119 @@
         }
 
         h3 {
+            font-family: 'Cormorant Garamond', serif;
             color: var(--text-main);
-            font-size: 1.4em;
-            font-weight: 500;
+            font-size: 1.5em;
+            font-weight: 600;
             margin-bottom: 15px;
         }
 
-        /* About Section */
+        /* About Section - Enhanced Typography */
         .about-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 40px;
+            display: grid;
+            grid-template-columns: 350px 1fr;
+            gap: 60px;
+            align-items: start;
         }
 
         .photo-container {
-            flex-shrink: 0;
+            position: sticky;
+            top: 40px;
         }
 
         .photo-container img {
             width: 100%;
-            max-width: 350px;
             height: auto;
-            border-radius: 8px;
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
-            border: 2px solid var(--accent-gold-dim);
+            border-radius: 4px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+            border: 1px solid var(--accent-gold-dim);
+            filter: grayscale(15%);
+            transition: filter 0.4s ease, transform 0.4s ease;
+        }
+
+        .photo-container img:hover {
+            filter: grayscale(0%);
+            transform: translateY(-5px);
         }
 
         .about-text {
-            width: 100%;
-            max-width: 700px;
-            text-align: center;
+            text-align: left;
+            max-width: 65ch;
         }
 
         .about-text .intro-text {
-            font-size: 1.15em;
-            margin-bottom: 30px;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5em;
+            font-style: italic;
+            line-height: 1.6;
             color: var(--text-main);
-            line-height: 1.8;
+            margin-bottom: 35px;
             padding: 30px;
-            background: var(--accent-gold-dim);
-            border-radius: 8px;
-            border: 1px solid rgba(212, 175, 55, 0.2);
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.08) 0%, rgba(212, 175, 55, 0.02) 100%);
+            border-left: 3px solid var(--accent-gold);
+            border-radius: 0 8px 8px 0;
+            text-wrap: balance;
         }
 
-        .about-text > p {
-            font-size: 1.2em;
+        .about-text .practitioner-statement {
+            font-size: 1.25em;
+            font-weight: 600;
+            color: var(--accent-gold);
             margin-bottom: 25px;
-            color: var(--text-main);
-            font-weight: 500;
+            letter-spacing: 0.5px;
         }
 
         .about-text ul {
             list-style: none;
             padding: 0;
-            margin: 0 auto 30px;
-            max-width: 600px;
-            text-align: left;
+            margin: 0 0 40px 0;
         }
 
         .about-text li {
-            padding: 12px 0 12px 35px;
+            padding: 10px 0 10px 35px;
             position: relative;
             color: var(--text-muted);
             font-size: 1.05em;
+            line-height: 1.6;
+            hyphens: auto;
         }
 
         .about-text li::before {
-            content: '\f00c';
-            font-family: 'Font Awesome 6 Free';
-            font-weight: 900;
+            content: '✦';
             position: absolute;
             left: 0;
             color: var(--accent-gold);
+            font-size: 1.2em;
+            top: 8px;
         }
 
         .diploma-preview {
-            margin-top: 20px;
-            text-align: center;
+            margin-top: 30px;
+            text-align: left;
+            display: inline-block;
         }
 
         .diploma-preview img {
-            max-width: 250px;
+            max-width: 220px;
             width: 100%;
-            border-radius: 6px;
+            border-radius: 4px;
             cursor: zoom-in;
-            border: 2px solid var(--accent-gold-dim);
-            transition: transform 0.5s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.5s ease, z-index 0s 0.5s;
-            transform-origin: center center;
-            position: relative;
-            z-index: 1;
+            border: 1px solid var(--accent-gold-dim);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
         }
 
         .diploma-preview img.expanded {
-            transform: scale(2);
+            transform: scale(2.2);
             cursor: zoom-out;
             z-index: 100;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.7);
+            box-shadow: 0 25px 60px rgba(0,0,0,0.8);
             border-color: var(--accent-gold);
         }
 
         .diploma-preview p {
             font-size: 0.85em;
             color: var(--text-muted);
-            margin-top: 12px;
+            margin-top: 10px;
             font-style: italic;
         }
 
@@ -565,6 +582,41 @@
         }
 
         /* Responsive */
+        @media (max-width: 900px) {
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .photo-container {
+                position: relative;
+                top: 0;
+                max-width: 300px;
+                margin: 0 auto;
+            }
+            
+            .about-text {
+                text-align: center;
+                max-width: 100%;
+                padding: 0 10px;
+            }
+            
+            .about-text .intro-text {
+                text-align: left;
+            }
+            
+            .about-text ul {
+                text-align: left;
+                max-width: 400px;
+                margin: 0 auto 40px;
+            }
+            
+            .diploma-preview {
+                text-align: center;
+                display: block;
+            }
+        }
+
         @media (max-width: 768px) {
             .header-content {
                 flex-direction: column;
@@ -636,24 +688,26 @@
                 <h2 id="about-heading">О себе</h2>
                 <div class="about-content">
                     <div class="photo-container">
-                        <img src="foto.jpg" alt="Фотография Анны Курнаевой, клинического психолога">
+                        <img src="foto.jpg" alt="Анна Курнаева, клинический психолог и гипнотерапевт">
                     </div>
                     <div class="about-text">
                         <div class="intro-text">
-                            Клинический психолог. Гипнотерапевт.<br><br>
-                            Для себя я приняла одну важную вещь: психика человека может излечиться только от психики другого человека, впрочем, как и травмироваться. Именно поэтому на всём жизненном пути человеку нужен человек.<br><br>
-                            Психотерапия — это про искусство быть рядом с человеком, даже когда он против себя.
+                            «Для себя я приняла одну важную вещь: психика человека может излечиться только от психики другого человека, впрочем, как и травмироваться. Именно поэтому на всём жизненном пути человеку нужен человек.
+                            <br><br>
+                            Психотерапия — это про искусство быть рядом с человеком, даже когда он против себя».
                         </div>
-                        <p>Я практик. Мне важны ваши результаты.</p>
+                        
+                        <p class="practitioner-statement">Я практик. Мне важны ваши результаты.</p>
+                        
                         <ul role="list">
-                            <li role="listitem">Окончила Институт психотерапии и медицинской психологии им. Б.Д. Карвасарского</li>
-                            <li role="listitem">Повысила квалификацию в НМИЦ ПН им. В.М. Бехтерева — Медицинский гипноз</li>
-                            <li role="listitem">Гипнотерапевт Национальной гильдии гипнотизёров (National Guild of Hypnotists)</li>
+                            <li role="listitem">Окончила Институт психотерапии и медицинской психологии им.&nbsp;Б.Д.&nbsp;Карвасарского</li>
+                            <li role="listitem">Повысила квалификацию в НМИЦ ПН им.&nbsp;В.М.&nbsp;Бехтерева по направлению «Медицинский гипноз»</li>
+                            <li role="listitem">Сертифицированный гипнотерапевт Национальной гильдии гипнотизёров (National Guild of Hypnotists)</li>
                         </ul>
                         
                         <div class="diploma-preview">
-                            <img src="img_1.jpg" alt="Изображение диплома об образовании" onclick="toggleZoom(this)" tabindex="0" role="button" aria-label="Увеличить изображение диплома">
-                            <p><i class="fas fa-search-plus" aria-hidden="true"></i> Нажмите на изображение для увеличения</p>
+                            <img src="img_1.jpg" alt="Диплом об образовании" onclick="toggleZoom(this)" tabindex="0" role="button" aria-label="Увеличить изображение диплома">
+                            <p><i class="fas fa-search-plus" aria-hidden="true"></i> Нажмите для увеличения</p>
                         </div>
                     </div>
                 </div>
